@@ -7,7 +7,6 @@ function call_RESTAPI() {
     if(document.getElementById("Info").style.display != "none"){
         document.getElementById("Info").style.display = "none";
     }
-    // console.log(name);
     if(!Empty(name,pass,role)){
         fetch("https://restapi.tu.ac.th/api/v1/auth/Ad/verify",{
             method : "POST",

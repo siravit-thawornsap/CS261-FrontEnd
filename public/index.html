@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>Login</h1>
+            
+            <form>
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Username">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+                <div class="input-group">
+                    <label for="role">Select your role</label>
+                    <select id="role">
+                        <option value="" selected disabled hidden>Select Role</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="student">Student</option>
+                    </select>
+                </div>
+                <button type="button" class="login-btn" onclick ="call_RESTAPI()">Login</button>
+            </form>
+            <p class = "Info" id="output">Hello</p>
+        </div>
+    </div>
+    <p id = "output" class = "output">Hello</p>
+    <div class="Info-container" id = "Info">
+        <p id = "Name"></p>
+        <p id = "ID"></p>
+        <p id = "Department"></p>
+    </div>
+</body>
+<script src="./js/test.js"></script> 
+</html>

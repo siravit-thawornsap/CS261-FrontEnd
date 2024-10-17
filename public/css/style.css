@@ -26,7 +26,11 @@ body {
     flex-direction: column;
     display:none;
 }
-
+.display_info {
+    background : #ccc;
+    padding: 5px 5px 5px 5px;
+    border-radius: 10px;
+}
 .login-box {
     text-align: center;
 }

@@ -16,7 +16,7 @@ function call_RESTAPI() {
             }),
             headers : {
                 "Content-type" : "application/json; charset=UTF-8",
-                "Application-Key" : "Your Api Key"
+                "Application-Key" : "Your API Key"
             }
         })
         .then(response => response.json())

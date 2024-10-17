@@ -16,7 +16,7 @@ function call_RESTAPI() {
             }),
             headers : {
                 "Content-type" : "application/json; charset=UTF-8",
-                "Application-Key" : "API key"
+                "Application-Key" : "Your Api Key"
             }
         })
         .then(response => response.json())
@@ -31,7 +31,7 @@ function call_RESTAPI() {
             }else{
                 document.getElementById("output").innerText = "";
                 document.getElementById("Info").style.display = "flex";
-                document.getElementById("Name").innerText = "Hello!! "+json.displayname_th;
+                document.getElementById("Name").innerText = "Name : "+json.displayname_th;
                 document.getElementById("ID").innerText = "ID : "+json.username;
                 document.getElementById("Department").innerText = "Department : "+json.faculty;
             }
@@ -42,41 +42,38 @@ function call_RESTAPI() {
     }
     
 function Empty(name,pass,role) {
-    // var user_name = document.getElementById("username").value;
-    // var user_pass = document.getElementById("password").value;
     if(name == ""){
+        document.getElementById("username").style.border = "5px solid red";
         document.getElementById("output").style.display = "block";
         document.getElementById("output").innerText = "UserName is empty!";
         return true;
     }
     else if(pass == ""){
+        document.getElementById("username").style.border = "1px solid #ccc";
+        document.getElementById("password").style.border = "5px solid red";
         document.getElementById("output").style.display = "block";
         document.getElementById("output").innerText = "Password is empty!";
         return true;
-    }else if(role == "teacher"){
+    }else if(role != "student"){
+        document.getElementById("username").style.border = "1px solid #ccc";
+        document.getElementById("password").style.border = "1px solid #ccc";
+        document.getElementById("role").style.border = "5px solid red";
         document.getElementById("output").style.display = "block";
         document.getElementById("output").innerText = "Role must be student!";
         return true;
+    }else{
+        document.getElementById("username").style.border = "1px solid #ccc";
+        document.getElementById("password").style.border = "1px solid #ccc";
+        document.getElementById("role").style.border = "1px solid #ccc";
+        return false;
     }
 }
 
-//############################################ Old Function #########################################################
-
-// function call_RESTAPI() {
-//     const name = document.getElementById("username").value;
-//     const pass = document.getElementById("password").value;
-
-//     const url = (
-//         'http://localhost:8080/hello?' +
-//         new URLSearchParams({ myName: name, lastName: pass }).toString()
-//     );
-
-//     fetch(url)
-//         .then(response => response.text())
-//         .then(text => {
-//             console.log("Rest api text" + text);
-//             document.getElementById("output").innerText = text;
-//         })
-//         .catch(error => console.error("Error : ", error))
-
-// }
+function HidePass() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }

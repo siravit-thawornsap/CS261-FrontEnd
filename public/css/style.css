@@ -81,6 +81,10 @@ button:hover {
     background-color: #5a9fd6;
     color: white;
 }
+.menu-btn {
+    background-color: #a7a7a7;
+    color: white;
+}
 
 .Info {
     display : none;
@@ -92,4 +96,16 @@ button:hover {
     display: none;
     font-size: 14px;
     color: red;
+}
+
+#checkbox {
+    position:absolute;
+    padding:1px;
+    margin-left: 315px;
+    margin-top: 15px;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
 }

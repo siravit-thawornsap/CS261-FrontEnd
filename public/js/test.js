@@ -16,7 +16,7 @@ function call_RESTAPI() {
             }),
             headers : {
                 "Content-type" : "application/json; charset=UTF-8",
-                "Application-Key" : "Your API Key"
+                "Application-Key" : "Your API Keys"
             }
         })
         .then(response => response.json())
@@ -31,6 +31,7 @@ function call_RESTAPI() {
             }else{
                 document.getElementById("output").innerText = "";
                 document.getElementById("Info").style.display = "flex";
+                document.getElementById("Login_Status").innerText = "Login "+json.message;
                 document.getElementById("Name").innerText = "Name : "+json.displayname_th;
                 document.getElementById("ID").innerText = "ID : "+json.username;
                 document.getElementById("Department").innerText = "Department : "+json.faculty;

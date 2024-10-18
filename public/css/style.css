@@ -30,6 +30,10 @@ body {
     background : #ccc;
     padding: 5px 5px 5px 5px;
     border-radius: 10px;
+    margin-bottom: 10px;
+}
+.display_info p{
+    padding: 5px 5px 5px 10px;
 }
 .login-box {
     text-align: center;

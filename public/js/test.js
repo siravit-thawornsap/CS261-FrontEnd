@@ -16,7 +16,7 @@ function call_RESTAPI() {
             }),
             headers : {
                 "Content-type" : "application/json; charset=UTF-8",
-                "Application-Key" : "Your API Keys"
+                "Application-Key" : "api key"
             }
         })
         .then(response => response.json())
@@ -25,9 +25,10 @@ function call_RESTAPI() {
             document.getElementById("username").value = "";
             document.getElementById("password").value = "";
             document.getElementById("role").value = "";
-            if(json.status == false){
-                document.getElementById("output").style.color = "red" ;
-                document.getElementById("output").innerText = json.message;
+            if(json.status === false){
+                console.log("Hello")
+                alert("ไม่สามารถ login ได้สำเร็จ")
+                return;
             }else{
                 document.getElementById("output").innerText = "";
                 document.getElementById("Info").style.display = "flex";
@@ -69,6 +70,8 @@ function Empty(name,pass,role) {
         return false;
     }
 }
+
+
 
 function HidePass() {
     var x = document.getElementById("password");
